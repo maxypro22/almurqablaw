@@ -15,11 +15,11 @@ mongoose.connect(process.env.MONGODB_URI)
   .catch(err => console.error('❌ MongoDB Connection Error:', err));
 
 // Routes
-app.use('/api/auth', require('./routes/authRoutes'));
-app.use('/api/cases', require('./routes/caseRoutes'));
-app.use('/api/finance', require('./routes/financeRoutes'));
-app.use('/api/users', require('./routes/userRoutes'));
-app.use('/api/dashboard', require('./routes/dashboardRoutes'));
+app.use('/auth', require('./routes/authRoutes'));
+app.use('/cases', require('./routes/caseRoutes'));
+app.use('/finance', require('./routes/financeRoutes'));
+app.use('/users', require('./routes/userRoutes'));
+app.use('/dashboard', require('./routes/dashboardRoutes'));
 
 // Basic Route
 app.get('/', (req, res) => {
@@ -27,10 +27,5 @@ app.get('/', (req, res) => {
 });
 
 const PORT = process.env.PORT || 5000;
-if (process.env.NODE_ENV !== 'production') {
-  app.listen(PORT, () => {
-    console.log(`🚀 Server running on port ${PORT}`);
-  });
-}
 
 module.exports = app;
