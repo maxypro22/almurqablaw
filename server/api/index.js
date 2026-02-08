@@ -15,11 +15,11 @@ mongoose.connect(process.env.MONGODB_URI)
   .catch(err => console.error('❌ MongoDB Connection Error:', err));
 
 // Routes
-app.use('/auth', require('./routes/authRoutes'));
-app.use('/cases', require('./routes/caseRoutes'));
-app.use('/finance', require('./routes/financeRoutes'));
-app.use('/users', require('./routes/userRoutes'));
-app.use('/dashboard', require('./routes/dashboardRoutes'));
+app.use('/auth', require('../routes/authRoutes'));
+app.use('/cases', require('../routes/caseRoutes'));
+app.use('/finance', require('../routes/financeRoutes'));
+app.use('/users', require('../routes/userRoutes'));
+app.use('/dashboard', require('../routes/dashboardRoutes'));
 
 // Basic Route
 app.get('/', (req, res) => {
